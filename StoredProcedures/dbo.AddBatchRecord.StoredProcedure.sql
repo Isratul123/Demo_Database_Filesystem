@@ -17,7 +17,7 @@ CREATE PROCEDURE [dbo].[AddBatchRecord]
 @Properties ntext = NULL
 AS
 
-IF @Action='Batchend' BEGIN
+IF @Action='Batchend ' BEGIN
    INSERT
    INTO [Batch] (BatchID, AddedOn, [Action], Item, Parent, Param, BoolParam, Content, Properties)
    VALUES (@BatchID, GETUTCDATE(), @Action, @UserName, @Parent, @Param, @BoolParam, @Content, @Properties)
